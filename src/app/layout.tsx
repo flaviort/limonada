@@ -19,12 +19,12 @@ import '@/assets/css/global.css'
 
 // metadata
 export const metadata: Metadata = {
-	metadataBase: new URL(`https://agenciaesfera.com.br`),
+	metadataBase: new URL(`https://alimonada.com.br`),
 	alternates: {
         canonical: './',
     },
-	title: 'Agência Esfera',
-	description: 'Transformamos ideias em experiências extraordinárias. Eventos corporativos 360º que conectam pessoas e resultados.',
+	title: 'Limonada',
+	description: 'Boutique de desenvolvimento para pessoas e negócios. Trabalhamos a partir do contexto de cada empresa para transformar desafios em decisões e ações que movem pessoas, culturas e negócios.',
 	icons: {
 		icon: [
 			{ url: '/icon.svg', type: 'image/svg+xml' },
@@ -38,16 +38,16 @@ export const metadata: Metadata = {
 	},
 	manifest: '/manifest.json',
 	openGraph: {
-		title: 'Agência Esfera',
-		description: 'Transformamos ideias em experiências extraordinárias. Eventos corporativos 360º que conectam pessoas e resultados.',
-		url: 'https://agenciaesfera.com.br',
-		siteName: 'Agência Esfera',
+		title: 'Limonada',
+		description: 'Boutique de desenvolvimento para pessoas e negócios. Trabalhamos a partir do contexto de cada empresa para transformar desafios em decisões e ações que movem pessoas, culturas e negócios.',
+		url: 'https://alimonada.com.br',
+		siteName: 'Limonada',
 		images: [
 			{
-				url: 'https://agenciaesfera.com.br/img/og-image.png',
+				url: 'https://alimonada.com.br/img/og-image.png',
 				width: 1280,
-				height: 628,
-				alt: 'Agência Esfera'
+				height: 630,
+				alt: 'Limonada'
 			}
 		],
 		locale: 'pt_BR',
@@ -60,13 +60,13 @@ export const viewport: Viewport = {
 	initialScale: 1
 }
 
-import { Poppins, Antonio } from 'next/font/google'
+import { Public_Sans, Antonio } from 'next/font/google'
 
-const poppins = Poppins({
+const publicSans = Public_Sans({
 	weight: ['400', '600', '700'],
 	style: ['normal'],
 	subsets: ['latin'],
-	variable: '--font-poppins',
+	variable: '--font-public-sans',
 	display: 'swap'
 })
 
@@ -90,11 +90,11 @@ export default function RootLayout({
 	const jsonLd = {
 		"@context": "https://schema.org",
 		"@type": "Organization",
-		"name": "Agência Esfera",
-		"legalName": "Agência Esfera LTDA",
-		"url": "https://agenciaesfera.com.br",
-		"logo": "https://agenciaesfera.com.br/img/og-image.jpg",
-		"description": "Transformamos ideias em experiências extraordinárias. Eventos corporativos 360º que conectam pessoas e resultados.",
+		"name": "Limonada",
+		"legalName": "Limonada",
+		"url": "https://alimonada.com.br",
+		"logo": "https://alimonada.com.br/img/og-image.jpg",
+		"description": "Boutique de desenvolvimento para pessoas e negócios. Trabalhamos a partir do contexto de cada empresa para transformar desafios em decisões e ações que movem pessoas, culturas e negócios.",
 		"address": {
 			"@type": "PostalAddress",
 			"streetAddress": "Av. Rep. Argentina, 1228",
@@ -106,11 +106,11 @@ export default function RootLayout({
 		"contactPoint": [
 			{
 				"@type": "ContactPoint",
-				"email": "administrativo@agenciaesfera.com.br",
+				"email": "administrativo@alimonada.com.br",
 				"contactType": "customer support"
 			}
 		],
-		"email": "administrativo@agenciaesfera.com.br",
+		"email": "administrativo@alimonada.com.br",
 		"sameAs": [
 			"https://facebook.com/AgenciaEsfera/",
 			"https://instagram.com/agencia_esfera/",
@@ -127,13 +127,13 @@ export default function RootLayout({
 	}
 
 	return (
-		<html lang='pt-BR' className={clsx(poppins.className, antonio.className)}>
+		<html lang='pt-BR' className={clsx(publicSans.className, antonio.className)}>
 
 			<head>
 
 				<meta
 					name='apple-mobile-web-app-title'
-					content='Esfera'
+					content='Limonada'
 				/>
 
 				<link
@@ -178,7 +178,7 @@ export default function RootLayout({
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 				/>
 
-				<GoogleAnalytics gaId='G-TZ9LGN811S' />
+				<GoogleAnalytics gaId='G-XXXX' />
 
 			</head>
 

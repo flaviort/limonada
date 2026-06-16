@@ -8,7 +8,7 @@ import MagneticButton from '@/components/Utils/Animations/MagneticButton'
 import { pages } from '@/utils/routes'
 
 export const metadata = {
-	title: 'Erro 404: Página não encontrada | Agência Esfera'
+	title: 'Erro 404: Página não encontrada | Limonada'
 }
 
 export default function Error404() {

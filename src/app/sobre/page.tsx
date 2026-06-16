@@ -18,7 +18,7 @@ import { logos } from '@/utils/logos'
 
 export const metadata = {
 	title: 'Sobre a Esfera',
-	description: 'Conheça a Agência Esfera, uma agência de marketing digital que transforma ideias em resultados.',
+	description: 'Conheça a Limonada, uma agência de marketing digital que transforma ideias em resultados.',
 	canonical: '/sobre'
 }
 

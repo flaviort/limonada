@@ -8,7 +8,7 @@ import { getPortfolioList } from '@/lib/wordpress/getPortfolio'
 export const revalidate = 3600
 
 export const metadata = {
-	title: 'Portfólio Agência Esfera',
+	title: 'Portfólio Limonada',
 	description: 'Confira o nosso portfólio de projetos.',
 	canonical: '/portfolio'
 }

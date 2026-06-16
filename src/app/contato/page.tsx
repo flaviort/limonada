@@ -11,7 +11,7 @@ import { phone, email } from '@/utils/functions'
 import { contact, socialLinks } from '@/utils/routes'
 
 export const metadata = {
-	title: 'Contato Agência Esfera: Endereço | Telefone | Email | Redes Sociais',
+	title: 'Contato Limonada: Endereço | Telefone | Email | Redes Sociais',
 	description: 'Entre em contato conosco para tirar suas ideias do papel.',
 	canonical: '/contato'
 }

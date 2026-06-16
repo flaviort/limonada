@@ -14,7 +14,7 @@ import { logos } from '@/utils/logos'
 
 export const metadata = {
 	title: 'Política de Privacidade',
-	description: 'Política de Privacidade da Agência Esfera',
+	description: 'Política de Privacidade da Limonada',
 	canonical: '/politica-de-privacidade'
 }
 

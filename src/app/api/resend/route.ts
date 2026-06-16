@@ -68,7 +68,7 @@ export async function POST(req: Request) {
 			<div style="background-color: #f2f2f2; padding: 50px 20px; font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;">
 				<div style="margin: auto; background-color: #fff; padding: 40px; width: 520px; max-width: 100%;">
 					<p style="font-size: 18px; color: #030304;">
-						<strong>Agência Esfera</strong>
+						<strong>Limonada</strong>
 					</p>
 
 					<hr /><br />
@@ -87,7 +87,7 @@ export async function POST(req: Request) {
 			.join('\n')
 
 		const { error } = await resend.emails.send({
-			from: 'Agência Esfera <administrativo@agenciaesfera.com.br>',
+			from: 'Limonada <administrativo@agenciaesfera.com.br>',
 			//from: 'onboarding@resend.dev',
 			to: [destinationEmail],
 			replyTo: body.Email,

@@ -26,7 +26,7 @@ export default function ISO20121() {
                             </h2>
 
                             <p className='text-18 lg:pr-4'>
-                                A atuação da Agência Esfera é orientada por práticas de governança, sustentabilidade e conformidade, integrando políticas institucionais e certificações que norteiam nossa operação.
+                                A atuação da Limonada é orientada por práticas de governança, sustentabilidade e conformidade, integrando políticas institucionais e certificações que norteiam nossa operação.
                             </p>
                             
                         </div>

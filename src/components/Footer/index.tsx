@@ -156,7 +156,7 @@ export default function Footer() {
 							</ul>
 
 							<p className='text-gray-light'>
-								Agência Esfera © {year} <br />
+								Limonada © {year} <br />
 								Todos os direitos reservados
 							</p>
 
