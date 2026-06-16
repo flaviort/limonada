@@ -60,7 +60,7 @@ export const viewport: Viewport = {
 	initialScale: 1
 }
 
-import { Public_Sans, Antonio } from 'next/font/google'
+import { Public_Sans, Bebas_Neue } from 'next/font/google'
 
 const publicSans = Public_Sans({
 	weight: ['400', '600', '700'],
@@ -70,11 +70,11 @@ const publicSans = Public_Sans({
 	display: 'swap'
 })
 
-const antonio = Antonio({
-	weight: ['600'],
+const bebasNeue = Bebas_Neue({
+	weight: ['400'],
 	style: ['normal'],
 	subsets: ['latin'],
-	variable: '--font-antonio',
+	variable: '--font-bebas-neue',
 	display: 'swap'
 })
 
@@ -127,7 +127,7 @@ export default function RootLayout({
 	}
 
 	return (
-		<html lang='pt-BR' className={clsx(publicSans.className, antonio.className)}>
+		<html lang='pt-BR' className={clsx(publicSans.className, bebasNeue.className)}>
 
 			<head>
 
