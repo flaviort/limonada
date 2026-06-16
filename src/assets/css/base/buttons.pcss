@@ -1,0 +1,44 @@
+@layer utilities {
+    .hover-underline {
+        @apply cursor-pointer inline w-fit hyphens-auto bg-linear-to-r from-current to-current bg-no-repeat bg-bottom-left duration-300 transition-all bg-size-[0_.05em] hover:bg-size-[100%_.05em];
+    }
+
+    .hover-underline-white {
+        @apply relative inline-flex overflow-hidden w-fit;
+
+        &:before {
+            @apply content-[''] absolute bottom-0 left-0 w-full h-px bg-current;
+        }
+
+        &:after {
+            @apply content-[''] absolute z-2 bottom-0 left-0 w-full h-px bg-white -translate-x-full duration-600 transition-transform;
+        }
+
+        &:hover,
+        &:focus-visible {
+            &:after {
+                @apply translate-x-full;
+            }
+        }
+    }
+
+    .button {
+        @apply relative flex items-center justify-center gap-1 w-fit rounded-4xl cursor-pointer py-4 px-12 hover:bg-black hover:text-white transition-colors duration-200;
+    }
+
+    .button--yellow {
+        @apply bg-yellow text-black;
+    }
+
+    .button--black {
+        @apply bg-black text-yellow;
+    }
+
+    .button--white {
+        @apply bg-white text-black;
+    }
+
+    .button--hollow-white {
+        @apply bg-transparent text-white border border-white hover:bg-white hover:text-black;
+    }
+}

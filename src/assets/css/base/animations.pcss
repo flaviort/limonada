@@ -1,0 +1,119 @@
+.fill-title {
+    > * {
+        @apply text-transparent;
+    }
+
+    &.gray-yellow {
+        > * {
+            background: linear-gradient(
+                to right,
+                var(--color-yellow) 50%,
+                var(--color-gray-lightest) 50%
+            );
+            background-size: 200% 100%;
+            background-position-x: 100%;
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+    }
+    
+    &.gray-black {
+        > * {
+            background: linear-gradient(
+                to right,
+                var(--color-black) 50%,
+                var(--color-gray-lightest) 50%
+            );
+            background-size: 200% 100%;
+            background-position-x: 100%;
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+    }
+    
+    &.white-yellow {
+        > * {
+            background: linear-gradient(
+                to right,
+                var(--color-yellow) 50%,
+                var(--color-white) 50%
+            );
+            background-size: 200% 100%;
+            background-position-x: 100%;
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+    }
+}
+
+.reveal-text {
+    @apply relative overflow-hidden will-change-transform;
+
+    &.completed {
+        @apply overflow-visible;
+
+        .split-line {
+            @apply overflow-visible;
+        }
+    }
+
+    .split-line {
+        @apply relative overflow-hidden will-change-transform;
+    
+        * {
+            @apply will-change-transform;
+        }
+    }
+
+    &.intro-home {
+        @apply overflow-visible;
+
+        .split-line {
+            @apply overflow-visible;
+            clip-path: inset(0 0 -1em 0);
+        }
+    }
+}
+
+.block-line-wrapper {
+    @apply relative w-max inline-block;
+}
+
+.block-line {
+    @apply relative block;
+}
+
+.block-revealer {
+    @apply absolute top-0 left-0 w-[101%] h-[101%] pointer-events-none will-change-transform z-1;
+}
+
+.animated-scroll {
+    @apply flex flex-col items-end gap-4 text-white text-sm tracking-normal hover:text-yellow transition-colors duration-300;
+
+    .animated-scroll-bar-wrapper {
+        @apply relative overflow-hidden w-px h-15 block;
+
+        .animated-scroll-bar {
+            @apply absolute top-0 left-0 w-full h-full bg-white group-hover:bg-yellow origin-top transition-colors duration-300;
+            animation: scroll-bar-animation 3s infinite;
+        }
+    }
+}
+
+@keyframes scroll-bar-animation {
+    0% {
+        transform: scaleY(0) translateY(0);
+    }
+
+    30% {
+        transform: scaleY(1) translateY(0);
+    }
+
+    60% {
+        transform: translateY(102%) scaleY(1);
+    }
+    
+    100% {
+        transform: translateY(102%) scaleY(1);
+    }
+}

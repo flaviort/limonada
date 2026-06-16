@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+
+@import './base/theme.pcss';
+@import './base/scroll-related-fixes.pcss';
+@import './base/globals.pcss';
+@import './base/grid.pcss';
+@import './base/typography.pcss';
+@import './base/buttons.pcss';
+@import './base/rich-text.pcss';
+@import './base/animations.pcss';
+
+@import './components/preloader.pcss';
