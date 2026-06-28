@@ -60,21 +60,20 @@ export const viewport: Viewport = {
 	initialScale: 1
 }
 
-import { Public_Sans, Bebas_Neue } from 'next/font/google'
+import { Public_Sans } from 'next/font/google'
+import localFont from 'next/font/local'
+
+const networkFree = localFont({
+	src: '../assets/fonts/NetworkFreeVersion.woff2',
+	variable: '--font-network-free',
+	display: 'swap'
+})
 
 const publicSans = Public_Sans({
 	weight: ['400', '600', '700'],
 	style: ['normal'],
 	subsets: ['latin'],
 	variable: '--font-public-sans',
-	display: 'swap'
-})
-
-const bebasNeue = Bebas_Neue({
-	weight: ['400'],
-	style: ['normal'],
-	subsets: ['latin'],
-	variable: '--font-bebas-neue',
 	display: 'swap'
 })
 
@@ -127,7 +126,7 @@ export default function RootLayout({
 	}
 
 	return (
-		<html lang='pt-BR' className={clsx(publicSans.className, bebasNeue.className)}>
+		<html lang='pt-BR' className={clsx(publicSans.variable, networkFree.variable)}>
 
 			<head>
 
@@ -135,6 +134,9 @@ export default function RootLayout({
 					name='apple-mobile-web-app-title'
 					content='Limonada'
 				/>
+
+				<link rel='preconnect' href='https://use.typekit.net' />
+				<link rel='stylesheet' href='https://use.typekit.net/dnh8ags.css' />
 
 				<link
 					rel='icon'

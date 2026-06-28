@@ -18,7 +18,7 @@ import MagneticButton from '@/components/Utils/Animations/MagneticButton'
 import Logo from '@/assets/svg/logo/logo.svg'
 
 // utils
-import { contact, pages, socialLinks } from '@/utils/routes'
+import { contact, pages } from '@/utils/routes'
 
 export default function Menu() {
 
@@ -36,7 +36,7 @@ export default function Menu() {
 	// helper function to check if a route is active (including nested routes)
 	const isActiveRoute = (href: string) => {
 		if (pathname === href) return true
-		if (href === pages.portfolio && pathname.startsWith(pages.portfolio + '/')) return true
+		if (href === pages.conteudo && pathname.startsWith(pages.conteudo + '/')) return true
 		return false
 	}
 
@@ -311,19 +311,19 @@ export default function Menu() {
 							{[
 								{
 									label: 'Sobre',
-									href: pages.about
+									href: pages.quem_somos
 								},
 								{
 									label: 'Serviços',
-									href: pages.services
+									href: pages.metodo_limao
 								},
 								{
 									label: 'Portfólio',
-									href: pages.portfolio
+									href: pages.conteudo
 								},
 								{
 									label: 'Contato',
-									href: pages.contact
+									href: pages.contato
 								}
 							].map((item, i) => (
 								<li key={i}>
@@ -332,7 +332,7 @@ export default function Menu() {
 											href={item.href}
 											className={clsx(
 												'hover-underline text-20 font-normal',
-												isActiveRoute(item.href) ? 'text-yellow' : pathname === pages.contact ? 'text-black' : 'text-white'
+												isActiveRoute(item.href) ? 'text-yellow' : pathname === pages.contato ? 'text-black' : 'text-white'
 											)}
 										>
 											{item.label}
@@ -348,33 +348,11 @@ export default function Menu() {
 						data-top-menu-social
 					>
 
-						{socialLinks.map((item, i) => (
-							<li
-								key={i}
-								className='hidden sm:block'
-							>
-								<MagneticButton>
-									<Link
-										href={item.href}
-										target='_blank'
-										rel='noopener noreferrer'
-										className={clsx(
-											'flex items-center justify-center w-12 min-w-12 h-12 border border-current rounded-full transition-colors duration-200 hover:text-black hover:bg-yellow hover:border-yellow p-4',
-											pathname === pages.contact ? 'text-black' : 'text-white'
-										)}
-										aria-label={item.name}
-									>
-										<item.icon className='w-full h-full' />
-									</Link>
-								</MagneticButton>
-							</li>
-						))}
-
 						<li className='hidden sm:block lg:hidden'>
 							<div
 								className={clsx(
 									'w-10 h-px block mx-2',
-									pathname === pages.contact ? 'bg-black' : 'bg-white'
+									pathname === pages.contato ? 'bg-black' : 'bg-white'
 								)}
 								data-top-menu-divider
 							/>
@@ -385,7 +363,7 @@ export default function Menu() {
 								<button
 									className={clsx(
 										'w-14 sm:w-12 min-w-14 sm:min-w-12 h-14 sm:h-12 rounded-full border border-current hover:border-yellow hover:bg-yellow hover:text-black flex flex-col items-center justify-center gap-1 relative transition-colors duration-200 cursor-pointer px-3 group',
-										pathname === pages.contact ? 'text-black' : 'text-white'
+										pathname === pages.contato ? 'text-black' : 'text-white'
 									)}
 									type='button'
 									onClick={toggleFsMenu}
@@ -426,6 +404,7 @@ export default function Menu() {
 	return (
 		<div ref={headerRef}>
 
+			{/*
 			<section
 				className='fixed top-0 left-0 w-full z-100 py-6 sm:py-10 -translate-y-[105%] [&.scrolling-up]:translate-y-0! transition-transform duration-600 bg-transparent'
 				data-sticky-menu
@@ -434,7 +413,7 @@ export default function Menu() {
 				<div
 					className={clsx(
 						'bg-linear-180 to-transparent absolute inset-0 z-0',
-						pathname === pages.contact ? 'from-white/90' : 'from-black/90'
+						pathname === pages.contato ? 'from-white/90' : 'from-black/90'
 					)}
 					data-sticky-menu-bg
 				/>
@@ -446,6 +425,7 @@ export default function Menu() {
 			<section className='absolute z-99 top-6 sm:top-10 left-0 w-full'>
 				{topMenu()}
 			</section>
+			*/}
 
 			<section
 				className='fixed z-98 top-0 left-0 w-full pointer-events-none'
@@ -465,19 +445,19 @@ export default function Menu() {
 								},
 								{
 									label: 'Sobre',
-									href: pages.about
+									href: pages.quem_somos
 								},
 								{
 									label: 'Serviços',
-									href: pages.services
+									href: pages.metodo_limao
 								},
 								{
 									label: 'Portfólio',
-									href: pages.portfolio
+									href: pages.conteudo
 								},
 								{
 									label: 'Contato',
-									href: pages.contact
+									href: pages.contato
 								}
 							].map((item, i) => (
 								<li
@@ -516,22 +496,6 @@ export default function Menu() {
 								Av. Rep. Argentina, 1228 <br />
 								Vila Izabel, Curitiba - PR, 80610-260
 							</Link>
-
-							<ul className='flex items-center gap-2'>
-								{socialLinks.map((item, i) => (
-									<li key={i}>
-										<Link
-											href={item.href}
-											target='_blank'
-											rel='noopener noreferrer'
-											className='flex items-center justify-center w-12 min-w-12 h-12 border border-current text-gray-light rounded-full transition-colors duration-200 hover:text-black hover:bg-yellow hover:border-yellow p-4'
-											aria-label={item.name}
-										>
-											<item.icon className='w-full h-full' />
-										</Link>
-									</li>
-								))}
-							</ul>
 
 						</div>
 

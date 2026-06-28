@@ -68,7 +68,7 @@ export default function NextProject({
                 <div className='flex items-center justify-center text-center border-t border-t-gray-medium pt-10 pb-20 lg:pt-20'>
                     <MagneticButton>
                         <Link
-                            href={pages.portfolio}
+                            href={pages.conteudo}
                             className='button button--hollow-white lowercase'
                         >
                             Ver todos

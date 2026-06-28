@@ -8,7 +8,7 @@ import Map from './Map'
 
 // utils
 import { phone, email } from '@/utils/functions'
-import { contact, socialLinks } from '@/utils/routes'
+import { contact } from '@/utils/routes'
 
 export const metadata = {
 	title: 'Contato Limonada: Endereço | Telefone | Email | Redes Sociais',
@@ -36,24 +36,6 @@ export default function Contact() {
 							</p>
 
 							<div className='bg-yellow p-6 md:p-10 rounded-lg w-full block'>
-
-								<ul className='flex items-center justify-end gap-2'>
-									{socialLinks.map((item, i) => (
-										<li key={i}>
-											<MagneticButton>
-												<Link
-													href={item.href}
-													target='_blank'
-													rel='noopener noreferrer'
-													className='flex items-center justify-center w-12 lg:w-15 min-w-12 lg:min-w-15 h-12 lg:h-15 border border-current text-black rounded-full transition-colors duration-200 hover:text-white hover:bg-black hover:border-black p-4 lg:p-5'
-													aria-label={item.name}
-												>
-													<item.icon className='w-full h-full' />
-												</Link>
-											</MagneticButton>
-										</li>
-									))}
-								</ul>
 
 								<div className='flex flex-col mt-12 lg:mt-6'>
 									

@@ -177,7 +177,7 @@ export default function Intro() {
                 <div className='banner-texts base-container relative z-2'>
                     <div className='relative flex items-center justify-center text-center h-svh'>
 
-                        <p className='text-24 text-white absolute z-4 bottom-10 left-0 leading-snug!'>
+                        <p className='text-24 text-white absolute z-4 bottom-10 left-0 leading-snug! font-cursive'>
                             Somos uma <br />
                             <span className='text-yellow'>agência 360</span>
                         </p>
@@ -277,7 +277,7 @@ export default function Intro() {
                         <div className='col-lg-5 col-lg-pull-7 lg:py-10'>
                             <TextReveal className='[&_.block-revealer]:h-[115%]!'>
                                 <p className='text-60 text-center lg:text-left'>
-                                    Na <Link href={pages.about} className='relative font-semibold before:content-[""] before:absolute before:bottom-3 before:left-0 before:w-full before:h-1 before:bg-yellow before:scale-x-0 before:origin-left before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-x-100'>Esfera</Link>, trabalhamos com energia, paixão e respeito.
+                                    Na <Link href={pages.quem_somos} className='relative font-semibold before:content-[""] before:absolute before:bottom-3 before:left-0 before:w-full before:h-1 before:bg-yellow before:scale-x-0 before:origin-left before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-x-100'>Esfera</Link>, trabalhamos com energia, paixão e respeito.
                                 </p>
                             </TextReveal>
                         </div>

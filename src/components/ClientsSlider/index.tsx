@@ -14,9 +14,9 @@ export default function ClientsSlider() {
                 <div className='md:flex md:gap-4 md:justify-between'>
 
                     <AnimatedTitle
-                        className='uppercase font-heading text-[31vw] sm:text-[33vw] md:text-[18vw] tracking-tighter leading-none text-yellow whitespace-nowrap -ml-2 md:ml-0 pr-1 [&_small]:opacity-0'
+                        className='uppercase font-heading text-[31vw] sm:text-[33vw] md:text-[18vw] leading-none text-yellow whitespace-nowrap -ml-2 md:ml-0 pr-1 [&_small]:opacity-0'
                     >
-                        Clientes<small>.</small>
+                        LIM{`{}`}NADA
                     </AnimatedTitle>
 
                     <TextReveal className='md:text-right mt-6 md:mt-4'>

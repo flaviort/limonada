@@ -8,49 +8,24 @@ export const pages = {
 	home: '/',
 
 	// regular pages
-	about: '/sobre',
-	services: '/sobre#servicos',
-	portfolio: '/portfolio',
-	portfolio_inner: '/portfolio/inner',
-	contact: '/contato',
-
-	// privacy
-	privacy: '/politica-de-privacidade',
-
-	// others
-	error: '/404'
+	quem_somos: '/quem-somos',
+	metodo_limao: '/metodo-limao',
+	conteudo: '/conteudo',
+	contato: '/contato',
 }
 
 // social
 export const social = {
-	facebook: 'https://facebook.com/AgenciaEsfera/',
-	linkedin: 'https://linkedin.com/company/agencia-esfera',
-	instagram: 'https://instagram.com/agencia_esfera/'
+	facebook: 'https://facebook.com/',
+	linkedin: 'https://www.linkedin.com/company/103921204/admin/feed/posts/',
+	instagram: 'https://www.instagram.com/limonadahub/',
+	youtube: 'https://www.youtube.com/@limonadahub'
 }
 
 // contact
 export const contact = {
-	phone: '(41) 3340-4300',
-	email: 'administrativo@agenciaesfera.com.br',
-	address: 'Av. Rep. Argentina, 1228 - Sala 2210 - Vila Izabel, Curitiba - PR, 80610-260',
-	gmaps: 'https://maps.app.goo.gl/Sg1E92zC1FYNJMYx7'
+	phone: '(41) 0000-0000',
+	email: 'contato@alimonada.com.br',
+	address: 'Rua José Casemiro Stenzowski, 21D - Novo Mundo, Curitiba - PR, 81010-370',
+	gmaps: 'https://maps.app.goo.gl/'
 }
-
-// social links
-export const socialLinks = [
-	{
-		icon: Instagram,
-		name: 'Instagram',
-		href: social.instagram
-	},
-	{
-		icon: Facebook,
-		name: 'Facebook',
-		href: social.facebook
-	},
-	{
-		icon: Linkedin,
-		name: 'Linkedin',
-		href: social.linkedin
-	}
-]
