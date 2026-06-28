@@ -11,7 +11,7 @@ import lemon3 from '@/assets/img/lemon-3.png'
 import lemon4 from '@/assets/img/lemon-4.png'
 import lemon5 from '@/assets/img/lemon-5.png'
 
-const LEMONS = [lemon1.src, lemon2.src, lemon3.src, lemon4.src, lemon5.src]
+const lemons = [lemon1.src, lemon2.src, lemon3.src, lemon4.src, lemon5.src]
 
 interface LemonTrailProps extends React.HTMLAttributes<HTMLElement> {
 	as?: React.ElementType
@@ -38,7 +38,7 @@ function useLemonTrail(containerRef: React.RefObject<HTMLElement | null>) {
 			if (y > H - 100) return
 
 			const img = document.createElement('img')
-			img.src = LEMONS[indexImg]
+			img.src = lemons[indexImg]
 			img.style.cssText = 'top:0;left:0;width:15vw;height:15vw;position:absolute;object-fit:contain;z-index:20;pointer-events:none;'
 			root.appendChild(img)
 
@@ -67,7 +67,6 @@ function useLemonTrail(containerRef: React.RefObject<HTMLElement | null>) {
 
 			tl.fromTo(img, { y }, {
 				y: '+=' + (H - y),
-				scale: 0.9,
 				yPercent: -95,
 				ease: 'back.in(1.1)',
 				duration: 0.5
@@ -86,7 +85,7 @@ function useLemonTrail(containerRef: React.RefObject<HTMLElement | null>) {
 				duration: 0.4
 			}, '<')
 
-			indexImg = (indexImg + 1) % LEMONS.length
+			indexImg = (indexImg + 1) % lemons.length
 		}
 
 		function applyMove(clientX: number, clientY: number) {
