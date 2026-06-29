@@ -43,8 +43,10 @@ const nextConfig = {
 	images: {
 		remotePatterns: [
 			{
-				protocol: 'https',
-				hostname: 'wp.alimonada.com.br'
+				//protocol: 'https',
+				//hostname: 'wp.alimonada.com.br'
+				protocol: 'http',
+				hostname: 'limonada.local'
 			}
 		],
 		formats: ['image/avif', 'image/webp'],

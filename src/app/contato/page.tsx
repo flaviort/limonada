@@ -4,7 +4,6 @@ import { Link } from 'next-transition-router'
 // components
 import MagneticButton from '@/components/Utils/Animations/MagneticButton'
 import { Form, Input, InputHidden, Textarea, Checkbox, Submit } from '@/components/Form'
-import Map from './Map'
 
 // utils
 import { phone, email } from '@/utils/functions'
@@ -158,8 +157,6 @@ export default function Contact() {
 					</div>
 				</div>
 			</section>
-
-			<Map />
 
 		</main>
 	)

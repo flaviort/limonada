@@ -3,10 +3,15 @@ import TextReveal from '@/components/Utils/Animations/TextReveal'
 import Marquee from '@/components/Marquee'
 import AnimatedTitle from '@/components/Utils/Animations/AnimatedTitle'
 
-// utils
-import { logos } from '@/utils/logos'
-
 export default function ClientsSlider() {
+
+    const logos = [
+        {
+            src: '/img/clients/_old/albert-einstein.svg',
+            alt: 'Albert Einstein'
+        },
+    ]
+    
     return (
         <section className='py-15 lg:py-20 xl:py-25 bg-white'>
             
@@ -32,8 +37,6 @@ export default function ClientsSlider() {
             <div className='relative overflow-hidden flex flex-col gap-10 sm:gap-15 md:gap-20 xl:gap-30 mt-14 md:mt-20 lg:mt-25 xl:mt-30'>
 
                 <Marquee logos={logos} />
-
-                <Marquee logos={logos} reverse />
                 
             </div>
 

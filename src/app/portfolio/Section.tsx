@@ -1,11 +1,9 @@
 'use client'
 
 // libraries
+import { Link } from 'next-transition-router'
 import { useState, useMemo} from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-
-// components
-import PortfolioBlock from '@/components/PortfolioBlock'
 
 // interface
 interface Props {
@@ -119,14 +117,15 @@ export default function Section({
                                     }
                                 }}
                             >
-                                <PortfolioBlock
-                                    href={item.href}
-                                    image={item.image.node.mediaItemUrl}
-                                    date={item.date}
-                                    title={item.title}
-                                    text={item.text}
-                                    category={item.category}
-                                />
+                                <Link href={item.href}>
+                                    <p>
+                                        {item.image.node.mediaItemUrl}<br />
+                                        {item.date}<br />
+                                        {item.title}<br />
+                                        {item.text}<br />
+                                        {item.category}
+                                    </p>
+                                </Link>
                             </motion.div>
                         ))}
                     </AnimatePresence>

@@ -4,13 +4,6 @@ import Image from 'next/image'
 // components
 import BannerInternal from '@/components/BannerInternal'
 import MultiText from '@/components/PortfolioBlocks/MultiText'
-import BigNumbers from '@/components/BigNumbers'
-import AnimatedText from '@/components/Utils/Animations/AnimatedText'
-import Video from '@/components/Video'
-import StaggerScale from '@/components/Utils/Animations/StaggerScale'
-
-// utils
-import { logos } from '@/utils/logos'
 
 export const metadata = {
 	title: 'Política de Privacidade',
