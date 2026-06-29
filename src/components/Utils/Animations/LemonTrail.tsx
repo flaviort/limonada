@@ -12,6 +12,7 @@ import lemon4 from '@/assets/img/lemon-4.png'
 import lemon5 from '@/assets/img/lemon-5.png'
 
 const lemons = [lemon1.src, lemon2.src, lemon3.src, lemon4.src, lemon5.src]
+const lemonClassName = 'absolute top-0 left-0 z-20 h-auto w-[25vw] md:w-[15vw] aspect-square object-contain pointer-events-none'
 
 interface LemonTrailProps extends React.HTMLAttributes<HTMLElement> {
 	as?: React.ElementType
@@ -31,7 +32,7 @@ function useLemonTrail(containerRef: React.RefObject<HTMLElement | null>) {
 		let indexImg = 0
 
 		const isCoarsePointer = window.matchMedia('(hover: none)').matches
-		const resetDist = window.innerWidth / (isCoarsePointer ? 4 : 5)
+		const resetDist = window.innerWidth / (isCoarsePointer ? 2 : 5)
 
 		function createLemon(x: number, y: number, deltaX: number, deltaY: number) {
 			const H = root.offsetHeight
@@ -39,7 +40,7 @@ function useLemonTrail(containerRef: React.RefObject<HTMLElement | null>) {
 
 			const img = document.createElement('img')
 			img.src = lemons[indexImg]
-			img.style.cssText = 'top:0;left:0;width:15vw;height:15vw;position:absolute;object-fit:contain;z-index:20;pointer-events:none;'
+			img.className = lemonClassName
 			root.appendChild(img)
 
 			const tl = gsap.timeline({
