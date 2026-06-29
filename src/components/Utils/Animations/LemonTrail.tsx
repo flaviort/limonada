@@ -12,7 +12,7 @@ import lemon4 from '@/assets/img/lemon-4.png'
 import lemon5 from '@/assets/img/lemon-5.png'
 
 const lemons = [lemon1.src, lemon2.src, lemon3.src, lemon4.src, lemon5.src]
-const lemonClassName = 'absolute top-0 left-0 z-20 h-auto w-[25vw] md:w-[15vw] aspect-square object-contain pointer-events-none'
+const lemonClassName = 'absolute top-0 left-0 z-20 h-auto w-[22vw] md:w-[11vw] aspect-square object-contain pointer-events-none'
 
 interface LemonTrailProps extends React.HTMLAttributes<HTMLElement> {
 	as?: React.ElementType
@@ -152,5 +152,6 @@ const LemonTrail = function LemonTrail({
 		</Tag>
 	)
 }
+
 export default LemonTrail
 

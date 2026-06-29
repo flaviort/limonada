@@ -63,6 +63,7 @@ export default function PageTransition({
                     // kill all ScrollTrigger instances from the current page before leaving
                     //console.log('Killing ScrollTrigger instances on leave:', allScrollTriggers.length)
                     allScrollTriggers.forEach((st) => {
+                        if (st.vars?.id === 'footer-reveal') return
                         st.kill()
                     })
                 }

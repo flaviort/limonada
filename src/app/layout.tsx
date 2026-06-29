@@ -197,9 +197,12 @@ export default function RootLayout({
 				<PageTransition>
 					<SmoothScroller>
 
-						<Menu />
+						<div id='page-content' className='relative z-0'>
+							<Menu />
+							{children}
+						</div>
 
-						{children}
+						<div data-footer-pin aria-hidden='true' />
 
 						<Footer />
 

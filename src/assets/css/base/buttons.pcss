@@ -1,6 +1,15 @@
 @layer utilities {
     .hover-underline {
-        @apply cursor-pointer inline w-fit hyphens-auto bg-linear-to-r from-current to-current bg-no-repeat bg-bottom-left duration-300 transition-all bg-size-[0_.05em] hover:bg-size-[100%_.05em];
+        @apply cursor-pointer inline w-fit hyphens-auto bg-linear-to-r from-current to-current bg-no-repeat bg-bottom-left duration-300 transition-all bg-size-[0_.05em];
+
+        &:hover,
+        &:focus-visible {
+            @apply bg-size-[100%_.05em];
+        }
+
+        &:focus-visible {
+            @apply outline-1 outline-green-light rounded-xs;
+        }
     }
 
     .hover-underline-white {
@@ -23,7 +32,7 @@
     }
 
     .button {
-        @apply relative flex items-center justify-center gap-1 w-fit rounded-4xl cursor-pointer py-3 px-14 hover:bg-yellow hover:text-green-dark transition-colors duration-200;
+        @apply relative flex items-center justify-center gap-1 w-fit rounded-4xl cursor-pointer py-4 px-14 hover:bg-yellow hover:text-green-dark transition-colors duration-200;
     }
 
     .button--green-neon {

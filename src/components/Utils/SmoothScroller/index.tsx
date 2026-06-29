@@ -84,17 +84,19 @@ export default function SmoothScroller({
             const diff = state.targetScroll - state.currentScroll
             
             // if difference is very small, snap to target
-            if (Math.abs(diff) < 0.5) {
-                state.currentScroll = state.targetScroll
-                viewport.scrollTop = state.currentScroll
-                state.isScrolling = false
-                state.rafId = null
-                return
-            }
+			if (Math.abs(diff) < 0.5) {
+				state.currentScroll = state.targetScroll
+				viewport.scrollTop = state.currentScroll
+				ScrollTrigger.update()
+				state.isScrolling = false
+				state.rafId = null
+				return
+			}
 
             // lerp towards target (0.1 = faster, 0.05 = slower but smoother)
             state.currentScroll = lerp(state.currentScroll, state.targetScroll, 0.075)
             viewport.scrollTop = state.currentScroll
+            ScrollTrigger.update()
 
             state.rafId = requestAnimationFrame(smoothScroll)
         }

@@ -294,7 +294,7 @@ export const Label = ({
             {label && label}
 
             {required && (
-                <span className='text-red-600'>
+                <span>
                     &nbsp;*
                 </span>
             )}
@@ -447,7 +447,7 @@ export const Input = ({
 					id={id}
 					placeholder={placeholder}
 					className={clsx(
-                        'block w-full border border-gray-lighter bg-transparent rounded-md text-black p-4 text-ellipsis focus-visible:outline-1 focus-visible:outline-gray-light placeholder:opacity-75',
+                        'block w-full border border-green-light bg-transparent rounded-md text-green-light p-4 text-ellipsis focus-visible:outline-1 focus-visible:outline-green-light placeholder:opacity-75',
                         inputClassName
                     )}
 					disabled={disabled || false}
