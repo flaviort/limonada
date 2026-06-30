@@ -18,6 +18,9 @@ function useLemonTrail(containerRef: React.RefObject<HTMLElement | null>) {
 		const container = containerRef.current
 		if (!container) return
 
+		const media = window.matchMedia('(min-width: 768px)')
+		if (!media.matches) return
+
 		const root: HTMLElement = container
 
 		let incr = 0
@@ -26,8 +29,7 @@ function useLemonTrail(containerRef: React.RefObject<HTMLElement | null>) {
 		let firstMove = true
 		let indexImg = 0
 
-		const isCoarsePointer = window.matchMedia('(hover: none)').matches
-		const resetDist = window.innerWidth / (isCoarsePointer ? 2 : 5)
+		const resetDist = window.innerWidth / 5
 
 		function createLemon(x: number, y: number, deltaX: number, deltaY: number) {
 			const H = root.offsetHeight
@@ -111,18 +113,11 @@ function useLemonTrail(containerRef: React.RefObject<HTMLElement | null>) {
 		}
 
 		const onMouseMove = (e: MouseEvent) => applyMove(e.clientX, e.clientY)
-		const onTouchMove = (e: TouchEvent) => {
-			if (e.touches?.[0]) applyMove(e.touches[0].clientX, e.touches[0].clientY)
-		}
 
 		root.addEventListener('mousemove', onMouseMove)
-		root.addEventListener('touchstart', onTouchMove, { passive: true })
-		root.addEventListener('touchmove', onTouchMove, { passive: true })
 
 		return () => {
 			root.removeEventListener('mousemove', onMouseMove)
-			root.removeEventListener('touchstart', onTouchMove)
-			root.removeEventListener('touchmove', onTouchMove)
 		}
 	}, [containerRef])
 }

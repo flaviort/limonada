@@ -79,9 +79,9 @@ export default function Footer() {
 			data-main-footer
 			ref={sectionRef}
 		>
-			<LemonTrail className='relative w-full touch-pan-y pointer-events-auto'>
+			<LemonTrail className='relative w-full pointer-events-auto'>
 				<div className='base-container'>
-					<div className='flex flex-col justify-between gap-30 sm:gap-10 pb-4 md:pb-10 pt-10 xs:pt-14 sm:pt-20 min-h-lvh'>
+					<div className='flex flex-col justify-between gap-30 sm:gap-10 pb-4 md:pb-10 pt-10 xs:pt-14 sm:pt-20 min-h-svh'>
 
 						<div className='row'>
 							
