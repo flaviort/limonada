@@ -4,13 +4,9 @@ import { useEffect, useRef } from 'react'
 import Matter from 'matter-js'
 import clsx from 'clsx'
 
-import lemon1 from '@/assets/img/lemon-1.png'
-import lemon2 from '@/assets/img/lemon-2.png'
-import lemon3 from '@/assets/img/lemon-3.png'
-import lemon4 from '@/assets/img/lemon-4.png'
-import lemon5 from '@/assets/img/lemon-5.png'
+import { lemonImageSources } from '@/utils/lemonImages'
 
-const lemon_images = [lemon1.src, lemon2.src, lemon3.src, lemon4.src, lemon5.src]
+const lemon_images = [...lemonImageSources]
 const lemon_class = 'absolute top-0 left-0 z-20 h-auto w-[20vw] md:w-[12vw] aspect-square max-w-none object-contain select-none will-change-transform cursor-grab pointer-events-auto active:cursor-grabbing'
 const wall_size = 60
 

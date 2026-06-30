@@ -14,18 +14,9 @@ gsap.registerPlugin(SplitText, ScrollTrigger)
 export default function Preloader() {
 
     const preloaderRef = useRef<HTMLElement>(null)
-    const videoContainerRef = useRef<HTMLDivElement>(null)
     const pathname = usePathname()
 
     useGSAP(() => {
-        if (!videoContainerRef.current) return
-
-        const finalRect = videoContainerRef.current.getBoundingClientRect()
-        const centerX = window.innerWidth / 2
-        const centerY = window.innerHeight / 2
-        
-        const deltaX = (finalRect.left + finalRect.width / 2) - centerX
-        const deltaY = (finalRect.top + finalRect.height / 2) - centerY
 
         // initial part of the timeline
         const tl = gsap.timeline({
@@ -39,12 +30,6 @@ export default function Preloader() {
                     tlInternal.play()
                 }
             }
-        })
-
-        tl.set(videoContainerRef.current, {
-            x: -deltaX,
-            y: -deltaY,
-            scale: 0
         })
 
         tl.to('[data-prealoder-numbers] > img', {
@@ -61,13 +46,7 @@ export default function Preloader() {
         const tlHome = gsap.timeline({ 
             paused: true,
             onComplete: () => {
-                const split = new SplitText('[data-preloader-title]', { 
-                    type: 'lines, words, chars',
-                    linesClass: 'split-line'
-                })
-
                 const tlHomeFadeOut = gsap.timeline({
-                    delay: 2,
                     onComplete: () => {
                         document.body.style.overflow = ''
                         
@@ -77,19 +56,6 @@ export default function Preloader() {
                         })
                     }
                 })
-
-                tlHomeFadeOut.to('[data-preloader-video]', {
-                    yPercent: -105,
-                    duration: .6,
-                    ease: 'power2.inOut'
-                })
-
-                tlHomeFadeOut.to(split.chars, {
-                    yPercent: -120,
-                    duration: .5,
-                    stagger: .025,
-                    ease: 'power2.inOut'
-                }, '<')
 
                 tlHomeFadeOut.to('[data-preloader-bg] > div', {
                     yPercent: -110,
@@ -123,31 +89,6 @@ export default function Preloader() {
             duration: 1,
             ease: 'power2.inOut'
         })
-
-        tlHome.to(videoContainerRef.current, {
-            scale: 1,
-            opacity: 1,
-            duration: 1,
-            ease: 'power2.inOut'
-        })
-
-        tlHome.to(videoContainerRef.current, {
-            x: 0,
-            y: 0,
-            duration: 1,
-            delay: .3,
-            ease: 'power2.inOut'
-        })
-
-        tlHome.fromTo('[data-preloader-title]', {
-            opacity: 0,
-            xPercent: 50
-        }, {
-            opacity: 1,
-            xPercent: 0,
-            duration: 1,
-            ease: 'power2.inOut'
-        }, '<')
 
         // internal timeline
         const tlInternal = gsap.timeline({
@@ -198,53 +139,14 @@ export default function Preloader() {
                     </div>
                 </div>
             </div>
-            
-            <div
-                className='absolute z-2 inset-0 flex justify-center items-center'
-                data-preloader-content
-            >
-                <div className='base-container'>
-                    <div className='flex flex-col md:flex-row-reverse items-center justify-center h-svh gap-5 sm:gap-10 md:gap-20'>
-
-                        <div 
-                            ref={videoContainerRef}
-                            className='relative overflow-hidden h-[35svh] md:h-[50svh] aspect-3/4 rounded-md opacity-0 will-change-transform'
-                            data-preloader-video-wrapper
-                        >
-                            <video
-                                loop
-                                muted
-                                playsInline
-                                autoPlay
-                                className='w-full h-full object-cover will-change-transform'
-                                data-preloader-video
-                            >
-                                <source
-                                    src='/videos/intro-03.mp4'
-                                    type='video/mp4'
-                                />
-                            </video>
-                        </div>
-
-                        <p
-                            className='text-60 opacity-0 reveal-text intro-home text-center md:text-left'
-                            data-preloader-title
-                        >
-                            Somos uma <br />
-                            <span className='text-yellow'>agência 360</span>
-                        </p>
-                        
-                    </div>
-                </div>
-            </div>
 
             <div
 				className='fixed z-97 inset-0 pointer-events-none'
 				data-preloader-bg
 			>
-				<div className='absolute z-1 top-0 left-0 w-full h-[110vh] translate-y-full bg-yellow' />
-				<div className='absolute z-2 top-0 left-0 w-full h-[110vh] translate-y-full bg-black' />
-				<div className='absolute z-3 top-0 left-0 w-full h-[110vh] translate-y-full bg-white' />
+				<div className='absolute z-1 top-0 left-0 w-full h-[110vh] translate-y-full bg-green-dark' />
+				<div className='absolute z-2 top-0 left-0 w-full h-[110vh] translate-y-full bg-yellow' />
+				<div className='absolute z-3 top-0 left-0 w-full h-[110vh] translate-y-full bg-green-neon' />
 			</div>
 
 		</aside>

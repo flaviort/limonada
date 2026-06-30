@@ -4,14 +4,9 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 
-// lemon images
-import lemon1 from '@/assets/img/lemon-1.png'
-import lemon2 from '@/assets/img/lemon-2.png'
-import lemon3 from '@/assets/img/lemon-3.png'
-import lemon4 from '@/assets/img/lemon-4.png'
-import lemon5 from '@/assets/img/lemon-5.png'
+import { lemonImageSources } from '@/utils/lemonImages'
 
-const lemons = [lemon1.src, lemon2.src, lemon3.src, lemon4.src, lemon5.src]
+const lemons = [...lemonImageSources]
 const lemonClassName = 'absolute top-0 left-0 z-20 h-auto w-[22vw] md:w-[11vw] aspect-square object-contain pointer-events-none'
 
 interface LemonTrailProps extends React.HTMLAttributes<HTMLElement> {

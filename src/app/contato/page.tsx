@@ -31,7 +31,7 @@ export default function Contact() {
 
 							<p className='text-24 my-5 lg:my-10 leading-normal'>
 								Estamos aqui, é so chamar!<br />
-								Entre em contato e marque um café na Esfera!
+								Entre em contato e marque um café na Limonada!
 							</p>
 
 							<div className='bg-yellow p-6 md:p-10 rounded-lg w-full block'>
@@ -57,10 +57,10 @@ export default function Contact() {
 									</MagneticButton>
 
 									<div className='text-18 max-sm:text-base! mt-6'>
-										Quer fazer parte do time Esfera? <br />
+										Quer fazer parte do time Limonada? <br />
 										<MagneticButton>
 											<Link
-												href='https://agenciaesfera.vagas.solides.com.br/'
+												href='https://limonadahub.vagas.solides.com.br/'
 												target='_blank'
 												rel='noopener noreferrer'
 												className='font-semibold hover-underline-white after:bg-yellow!'

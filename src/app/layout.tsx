@@ -11,6 +11,7 @@ import SmoothScroller from '@/components/Utils/SmoothScroller'
 import Guidelines from '@/components/Utils/Guidelines'
 import Footer from '@/components/Footer'
 import Preloader from '@/components/Preloader'
+import PreloadLemonImages from '@/components/Utils/Animations/PreloadLemonImages'
 import ViewportHeight from '@/components/Utils/ViewportHeight'
 import PageTransition from '@/components/Utils/PageTransition'
 
@@ -105,23 +106,21 @@ export default function RootLayout({
 		"contactPoint": [
 			{
 				"@type": "ContactPoint",
-				"email": "administrativo@alimonada.com.br",
+				"email": "contato@alimonada.com.br",
 				"contactType": "customer support"
 			}
 		],
-		"email": "administrativo@alimonada.com.br",
+		"email": "contato@alimonada.com.br",
 		"sameAs": [
-			"https://facebook.com/AgenciaEsfera/",
-			"https://instagram.com/agencia_esfera/",
-			"https://linkedin.com/company/agencia-esfera"
+			"https://instagram.com/limonadahub/",
+			"https://linkedin.com/company/limonadahub/"
 		],
 		"keywords": [
-			"Eventos",
-			"Eventos Corporativos",
-			"Eventos 360º",
-			"Marketing",
-			"Branding",
-			"Design"
+			"Consultoria",
+			"Desenvolvimento",
+			"Liderança",
+			"Equipes",
+			"Negócios"
 		]
 	}
 
@@ -190,7 +189,7 @@ export default function RootLayout({
 
 				<ViewportHeight />
 
-				<div id='overlay' />
+				<PreloadLemonImages />
 
 				{ process.env.NODE_ENV !== 'development' && <Preloader /> }
 

@@ -5,7 +5,6 @@ import { useRef } from 'react'
 import { Link } from 'next-transition-router'
 import { usePathname } from 'next/navigation'
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 
 // components
@@ -76,7 +75,7 @@ export default function Footer() {
 
 	return (
 		<div
-			className='bg-green-dark rounded-tl-2xl rounded-tr-2xl sm:rounded-tl-4xl sm:rounded-tr-4xl md:rounded-tl-[3rem] md:rounded-tr-[3rem] -mt-4 sm:-mt-8 md:mt-0 relative z-10 text-green-light'
+			className='bg-green-dark rounded-tl-2xl rounded-tr-2xl sm:rounded-tl-4xl sm:rounded-tr-4xl md:rounded-tl-[3rem] md:rounded-tr-[3rem] -mt-4 sm:-mt-8 md:mt-0 relative overflow-hidden z-10 text-green-light'
 			data-main-footer
 			ref={sectionRef}
 		>
