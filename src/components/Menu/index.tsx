@@ -493,8 +493,8 @@ export default function Menu() {
 								rel='noopener noreferrer'
 								className='block w-fit mt-2 mb-4 text-sm text-gray-dark'
 							>
-								Av. Rep. Argentina, 1228 <br />
-								Vila Izabel, Curitiba - PR, 80610-260
+								Rua José Casemiro Stenzowski, 21D <br />
+								Novo Mundo, Curitiba - PR, 81010-370
 							</Link>
 
 						</div>

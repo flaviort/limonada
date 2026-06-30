@@ -1,8 +1,3 @@
-// svg
-import Facebook from '@/assets/svg/social/facebook.svg'
-import Linkedin from '@/assets/svg/social/linkedin.svg'
-import Instagram from '@/assets/svg/social/instagram.svg'
-
 // pages
 export const pages = {
 	home: '/',
@@ -16,8 +11,7 @@ export const pages = {
 
 // social
 export const social = {
-	facebook: 'https://facebook.com/',
-	linkedin: 'https://www.linkedin.com/company/103921204/admin/feed/posts/',
+	linkedin: 'https://www.linkedin.com/company/limonadahub',
 	instagram: 'https://www.instagram.com/limonadahub/',
 	youtube: 'https://www.youtube.com/@limonadahub'
 }

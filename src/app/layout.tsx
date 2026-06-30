@@ -97,10 +97,10 @@ export default function RootLayout({
 		"description": "Boutique de desenvolvimento para pessoas e negócios. Trabalhamos a partir do contexto de cada empresa para transformar desafios em decisões e ações que movem pessoas, culturas e negócios.",
 		"address": {
 			"@type": "PostalAddress",
-			"streetAddress": "Av. Rep. Argentina, 1228",
-			"addressLocality": "Vila Izabel, Curitiba",
+			"streetAddress": "Rua José Casemiro Stenzowski, 21D",
+			"addressLocality": "Novo Mundo, Curitiba",
 			"addressRegion": "PR",
-			"postalCode": "80610-260",
+			"postalCode": "81010-370",
 			"addressCountry": "BR"
 		},
 		"contactPoint": [
@@ -113,7 +113,8 @@ export default function RootLayout({
 		"email": "contato@alimonada.com.br",
 		"sameAs": [
 			"https://instagram.com/limonadahub/",
-			"https://linkedin.com/company/limonadahub/"
+			"https://linkedin.com/company/limonadahub/",
+			"https://www.youtube.com/@limonadahub"
 		],
 		"keywords": [
 			"Consultoria",
@@ -188,7 +189,6 @@ export default function RootLayout({
 				<div id='portal'></div>
 
 				<ViewportHeight />
-
 				<PreloadLemonImages />
 
 				{ process.env.NODE_ENV !== 'development' && <Preloader /> }
@@ -196,10 +196,9 @@ export default function RootLayout({
 				<PageTransition>
 					<SmoothScroller>
 
-						<div id='page-content' className='relative z-0'>
-							<Menu />
-							{children}
-						</div>
+						<Menu />
+						
+						{children}
 
 						<Footer />
 
