@@ -30,7 +30,7 @@ export default function MultiText({
                     <div className='row mb-8 lg:mb-20'>
                         <div className='col-lg-6 offset-lg-4'>
                             <AnimatedTitle
-                                style='gray-black'
+                                style='gray-green-dark'
                                 className='text-60 font-semibold'
                             >
                                 {title}
