@@ -190,7 +190,7 @@ export default function FollowMouse({
         >
 
             <div
-                className='fixed z-2 flex items-center justify-center w-35 min-w-35 h-35 rounded-full bg-yellow/90 x text-black pointer-events-none transform scale-0 max-md:hidden font-heading uppercase text-xl font-semibold'
+                className='fixed z-2 flex items-center justify-center w-35 min-w-35 h-35 rounded-full bg-yellow/90 x text-black pointer-events-none transform scale-0 max-md:hidden font-heading uppercase text-xl font-bold'
                 ref={object}
             >
                 {text}

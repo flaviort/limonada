@@ -11,7 +11,7 @@ import { useGSAP } from '@gsap/react'
 import MagneticButton from '@/components/Utils/Animations/MagneticButton'
 import LemonTrail from '@/components/Utils/Animations/LemonTrail'
 import Logo from '@/components/Svg/Logo'
-import { Form, Input, InputHidden } from '@/components/Form'
+import { Form, Input, InputHidden, Submit } from '@/components/Form'
 
 // utils
 import { pages, social } from '@/utils/routes'
@@ -190,14 +190,10 @@ export default function Footer() {
 									/>
 
 									<MagneticButton className='max-sm:w-full'>
-										<button
-											type='submit'
-											className='button button--green-neon md:-ml-1 max-sm:w-full!'
-										>
-											<span>
-												Enviar
-											</span>
-										</button>
+										<Submit
+											text='Enviar'
+											className='max-sm:w-full! md:-ml-1'
+										/>
 									</MagneticButton>
 									
 								</Form>

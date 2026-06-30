@@ -34,17 +34,17 @@ export const Modal = ({
 			<Dialog id={id}>
 				<div className='text-center'>
 
-					<h2 className='font-heading text-60 uppercase font-semibold tracking-tight'>
+					<h2 className='title-72 text-green-medium'>
 						{title}
 					</h2>
 
 					<div
-						className='text-18 my-6 sm:my-8 block'
+						className='my-6 sm:my-8 block'
 						dangerouslySetInnerHTML={{ __html: text }}
 					/>
 
 					<button
-						className='button button--yellow mx-auto'
+						className='button button--green-dark mx-auto'
 						data-dialog-close
 						onClick={onClose}
 						type='button'
