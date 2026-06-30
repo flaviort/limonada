@@ -33,6 +33,10 @@
 
     .button {
         @apply relative flex items-center justify-center gap-1 w-fit rounded-4xl cursor-pointer py-4 px-14 hover:bg-yellow hover:text-green-dark transition-colors duration-200;
+
+        & > [data-submit-text] {
+            @apply flex items-center justify-center gap-4;
+        }
     }
 
     .button--green-neon {

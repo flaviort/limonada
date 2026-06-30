@@ -202,8 +202,6 @@ export default function RootLayout({
 							{children}
 						</div>
 
-						<div data-footer-pin aria-hidden='true' />
-
 						<Footer />
 
 					</SmoothScroller>

@@ -25,8 +25,8 @@ export default function ScrollingImage({
     let size
 
     if (typeof window !== 'undefined' && window.innerWidth > 768) {
-        calcSize = 'calc(100% + 7rem)'
-        size = '-7rem'
+        calcSize = 'calc(100% + 5rem)'
+        size = '-5rem'
     } else {
         calcSize = 'calc(100% + 3rem)'
         size = '-3rem'

@@ -18,89 +18,36 @@ import { Form, Input, InputHidden } from '@/components/Form'
 import { pages, social } from '@/utils/routes'
 import { getYear } from '@/utils/functions'
 
-gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 export default function Footer() {
 
-	const footerRevealRef = useRef<HTMLDivElement>(null)
+	const sectionRef = useRef<HTMLDivElement>(null)
+
+    useGSAP(() => {
+        if (sectionRef.current) {
+            gsap.from('[data-logo] path', {
+				scale: 3,
+				filter: 'blur(.5rem)',
+				opacity: 0,
+				rotation: -50,
+				stagger: .1,
+                scrollTrigger: {
+                    anticipatePin: 1,
+                    scroller: document.getElementById('viewport') as HTMLElement,
+                    trigger: sectionRef.current,
+                    start: '40% 100%',
+                    end: '80% 100%',
+                    scrub: 2,
+					//markers: true
+                }
+            })
+        }
+    }, {
+        scope: sectionRef
+    })
+
 	const pathname = usePathname()
 	const year = getYear(new Date().getFullYear().toString())
-
-	useGSAP(() => {
-		const footerReveal = footerRevealRef.current
-		const pageContent = document.getElementById('page-content')
-		const spacer = document.querySelector('[data-footer-pin]') as HTMLElement | null
-		const viewport = document.getElementById('viewport')
-
-		if (!footerReveal || !pageContent || !spacer || !viewport) return
-
-		const getFooterHeight = () => footerReveal.offsetHeight
-
-		const setSpacerHeight = () => {
-			gsap.set(spacer, { height: getFooterHeight() })
-		}
-
-		const forwardWheel = (e: WheelEvent) => {
-			e.preventDefault()
-			viewport.dispatchEvent(new WheelEvent('wheel', {
-				deltaY: e.deltaY,
-				deltaX: e.deltaX,
-				bubbles: false,
-				cancelable: true,
-			}))
-		}
-
-		const mm = gsap.matchMedia()
-
-		mm.add('(min-width: 768px)', () => {
-			setSpacerHeight()
-
-			gsap.set(footerReveal, {
-				position: 'fixed',
-				left: 0,
-				bottom: 0,
-				width: '100%',
-				yPercent: 100,
-				zIndex: 10,
-			})
-
-			ScrollTrigger.create({
-				id: 'footer-reveal',
-				trigger: spacer,
-				start: 'top bottom',
-				end: () => `+=${getFooterHeight()}`,
-				scroller: viewport,
-				scrub: true,
-				pin: pageContent,
-				pinSpacing: false,
-				anticipatePin: 1,
-				pinType: 'fixed',
-				invalidateOnRefresh: true,
-				onUpdate: (self) => {
-					gsap.set(footerReveal, { yPercent: 100 * (1 - self.progress) })
-				},
-			})
-
-			footerReveal.addEventListener('wheel', forwardWheel, { passive: false })
-
-			ScrollTrigger.addEventListener('refreshInit', setSpacerHeight)
-
-			requestAnimationFrame(() => ScrollTrigger.refresh())
-
-			return () => {
-				footerReveal.removeEventListener('wheel', forwardWheel)
-				ScrollTrigger.removeEventListener('refreshInit', setSpacerHeight)
-				gsap.set(footerReveal, { clearProps: 'all' })
-				gsap.set(spacer, { clearProps: 'height' })
-			}
-		})
-
-		return () => mm.revert()
-	}, {
-		scope: footerRevealRef,
-		dependencies: [pathname],
-		revertOnUpdate: true,
-	})
 
 	const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
 		e.preventDefault()
@@ -129,12 +76,12 @@ export default function Footer() {
 
 	return (
 		<div
-			ref={footerRevealRef}
-			className='bg-green-dark rounded-tl-2xl rounded-tr-2xl sm:rounded-tl-4xl sm:rounded-tr-4xl md:rounded-tl-[3rem] md:rounded-tr-[3rem] -mt-4 sm:-mt-8 md:mt-0 relative z-10 text-green-light pointer-events-none'
+			className='bg-green-dark rounded-tl-2xl rounded-tr-2xl sm:rounded-tl-4xl sm:rounded-tr-4xl md:rounded-tl-[3rem] md:rounded-tr-[3rem] -mt-4 sm:-mt-8 md:mt-0 relative z-10 text-green-light'
 			data-main-footer
+			ref={sectionRef}
 		>
 			<LemonTrail className='relative w-full touch-pan-y pointer-events-auto'>
-				<div className='base-container relative'>
+				<div className='base-container'>
 					<div className='flex flex-col justify-between gap-30 sm:gap-10 pb-4 md:pb-10 pt-10 xs:pt-14 sm:pt-20 min-h-lvh'>
 
 						<div className='row'>
@@ -167,7 +114,7 @@ export default function Footer() {
 										<li key={i}>
 											<Link
 												href={item.href}
-												className='hover-underline md:text-lg xl:text-xl'
+												className='hover-underline md:text-lg'
 												onClick={(e) => handleLinkClick(e, item.href)}
 											>
 												{item.label}
@@ -198,7 +145,7 @@ export default function Footer() {
 												href={item.href}
 												target='_blank'
 												rel='noopener noreferrer'
-												className='hover-underline md:text-lg xl:text-xl'
+												className='hover-underline md:text-lg'
 												onClick={(e) => handleLinkClick(e, item.href)}
 											>
 												{item.label}
@@ -210,7 +157,7 @@ export default function Footer() {
 
 							<div className='col-md-4'>
 
-								<p className='md:text-lg xl:text-xl leading-relaxed'>
+								<p className='md:text-lg'>
 									Inscreva-se para receber conteúdos autorais, relevantes e estratégicos sobre desenvolvimento de líderes, equipes e negócios.
 								</p>
 
@@ -240,6 +187,7 @@ export default function Footer() {
 										name='email'
 										placeholder='nome@email.com.br'
 										required
+										isLight
 									/>
 
 									<MagneticButton className='max-sm:w-full'>
@@ -261,7 +209,7 @@ export default function Footer() {
 
 						<div className='flex flex-col gap-4 md:gap-6'>
 
-							<Logo className='w-full h-auto text-green-light' />
+							<Logo className='w-full h-auto text-green-light overflow-visible' />
 
 							<div className='flex items-center justify-between gap-4 text-green-light text-xs sm:text-sm md:text-base'>
 

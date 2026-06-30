@@ -14,6 +14,7 @@ import UxCheck from '@/assets/svg/ux/check.svg'
 import UxEye from '@/assets/svg/ux/eye.svg'
 import UxEyeSlash from '@/assets/svg/ux/eye-slash.svg'
 import UxSpinner from '@/assets/svg/ux/spinner.svg'
+import UxArrowRight from '@/assets/svg/ux/arrow-right.svg'
 
 interface ModalProps {
 	id: string
@@ -211,7 +212,7 @@ export const Form = ({
 				onSubmit={methods.handleSubmit(onSubmit)}
 				className={clsx(
 					className,
-					'[&[data-is-sending="true"]_[data-submit-text]]:opacity-0 [&[data-is-sending="true"]_[data-submit-spinner]]:opacity-100 [&[data-is-sending="true"]_[data-submit-button]]:pointer-events-none [&[data-is-sending="true"]_[data-submit-button]]:bg-black'
+					'[&[data-is-sending="true"]_[data-submit-text]]:opacity-0 [&[data-is-sending="true"]_[data-submit-spinner]]:opacity-100 [&[data-is-sending="true"]_[data-submit-button]]:pointer-events-none [&[data-is-sending="true"]_[data-submit-button]]:bg-black [&[data-is-sending="true"]_[data-submit-button]]:opacity-30'
 				)}
 				ref={form}
 				data-is-sending='false'
@@ -303,6 +304,10 @@ export const Label = ({
 	)
 }
 
+const inputStyle = 'block w-full border bg-transparent rounded-md p-4 text-ellipsis focus-visible:outline-1 placeholder:opacity-75';
+const lightStyle = 'border-green-light focus-visible:outline-green-light text-green-light';
+const darkStyle = 'border-gray-light focus-visible:outline-green-dark text-green-dark';
+
 interface InputProps {
 	id: string
 	label?: string
@@ -311,6 +316,7 @@ interface InputProps {
 	type: string
 	placeholder: string
 	className?: string
+	isLight?: boolean
 	inputClassName?: string
 	required?: boolean
 	maxLength?: number
@@ -330,6 +336,7 @@ export const Input = ({
 	type,
 	placeholder,
 	className,
+	isLight = false,
 	inputClassName,
 	required,
 	maxLength,
@@ -447,7 +454,8 @@ export const Input = ({
 					id={id}
 					placeholder={placeholder}
 					className={clsx(
-                        'block w-full border border-green-light bg-transparent rounded-md text-green-light p-4 text-ellipsis focus-visible:outline-1 focus-visible:outline-green-light placeholder:opacity-75',
+                        inputStyle,
+						isLight ? lightStyle : darkStyle,
                         inputClassName
                     )}
 					disabled={disabled || false}
@@ -484,6 +492,7 @@ export const Input = ({
 
 interface TextareaProps {
 	id: string
+	isLight?: boolean
 	label?: string
 	name: string
 	hideLabel?: boolean
@@ -496,6 +505,7 @@ interface TextareaProps {
 
 export const Textarea = ({
 	id,
+	isLight = false,
 	label,
 	name,
 	hideLabel,
@@ -548,7 +558,11 @@ export const Textarea = ({
 				<textarea
 					id={id}
 					placeholder={placeholder}
-					className='block w-full border border-gray-lighter bg-transparent rounded-md text-black p-4 text-ellipsis focus-visible:outline-1 focus-visible:outline-gray-light placeholder:opacity-75 resize-y min-h-30 h-30'
+					className={clsx(
+						inputStyle,
+						isLight ? lightStyle : darkStyle,
+						'rounded-md resize-y min-h-30 h-30'
+					)}
 					onFocus={() => setIsFocused(true)}
 					{...register(name, {
 						...validations,
@@ -698,19 +712,21 @@ interface SubmitProps {
 	className?: string
 	disabled?: boolean
 	onClick?: () => void
+	hasArrow?: boolean
 }
 
 export const Submit = ({
 	text,
 	className,
 	disabled,
-	onClick
+	onClick,
+	hasArrow = true
 }: SubmitProps) => {
 	return (
 		<button
 			className={clsx(
 				className,
-				'button button--yellow'
+				'button button--green-neon'
 			)}
 			type='submit'
 			disabled={disabled}
@@ -719,16 +735,20 @@ export const Submit = ({
 		>
 			<span data-submit-text>
 				{text}
+
+				{hasArrow && (
+					<UxArrowRight className='w-3 h-3' />
+				)}
 			</span>
 
 			<span
-                className='absolute inset-0 z-2 opacity-0 text-yellow p-3'
+                className='absolute inset-0 z-2 opacity-0 p-4'
                 data-submit-spinner
             >
 				<UxSpinner
-					className='w-full h-full animate-spin'
+					className='w-full h-full text-green-neon animate-spin'
 					style={{
-						animationDuration: '.4s'
+						animationDuration: '.3s'
 					}}
 				/>
 			</span>
